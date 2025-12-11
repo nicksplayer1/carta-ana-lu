@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Parabéns, Ana Lu 💙🩺</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #c7f4ff 0, #46a8ff 40%, #122133 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .wrapper {
+      text-align: center;
+      padding: 32px 16px 40px;
+      max-width: 520px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      margin-bottom: 18px;
+    }
+
+    .hint {
+      font-size: 0.85rem;
+      opacity: 0.85;
+      margin-bottom: 10px;
+    }
+
+    .hint span {
+      animation: bounce 1.3s infinite;
+      display: inline-block;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    .envelope-area {
+      margin: 0 auto 14px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .envelope {
+      position: relative;
+      width: 260px;
+      height: 180px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #0b2a47, #164064);
+      box-shadow: 0 24px 45px rgba(0, 0, 0, 0.55);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .envelope:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 28px 55px rgba(0, 0, 0, 0.7);
+    }
+
+    .envelope::before {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border-radius: 16px;
+      background: radial-gradient(circle at top left, #9ee8ff, #e1f6ff);
+      opacity: 0.25;
+    }
+
+    .envelope-label {
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: rgba(0, 0, 0, 0.52);
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+    }
+
+    .envelope-title {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.1rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .envelope-emoji {
+      margin-left: 6px;
+    }
+
+    .click-tip {
+      font-size: 0.8rem;
+      opacity: 0.8;
+      margin-top: 6px;
+    }
+
+    .card {
+      margin: 12px auto 0;
+      max-width: 340px;
+      width: 100%;
+      background: #fdfdfd;
+      color: #222;
+      border-radius: 24px;
+      padding: 18px 20px 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+      transform-origin: top center;
+      transform: scale(0.85) translateY(-12px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .card.open {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      pointer-events: auto;
+    }
+
+    .card-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      font-weight: 600;
+      color: #0ea5e9;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .card-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .card-content {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      text-align: left;
+      max-height: 220px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .card-content::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .card-content::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .card-content::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.18);
+      border-radius: 999px;
+    }
+
+    .card-strong {
+      font-weight: 600;
+    }
+
+    /* FOTO */
+    .photo-wrapper {
+      margin-bottom: 10px;
+    }
+
+    .photo-wrapper img {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+    }
+
+    .footer-note {
+      margin-top: 16px;
+      font-size: 0.8rem;
+      opacity: 0.85;
+    }
+
+    .footer-note span {
+      color: #bfdbfe;
+    }
+
+    .small {
+      font-size: 0.78rem;
+      opacity: 0.8;
+      margin-top: 4px;
+    }
+
+    /* VIDEO */
+    .video-wrapper {
+      margin: 16px auto 0;
+      max-width: 340px;
+      display: none;            /* começa escondido */
+    }
+
+    .video-wrapper.show {
+      display: block;           /* aparece quando o envelope é clicado */
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.55);
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.35rem;
+      }
+      .card {
+        border-radius: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Tenho uma coisa importante pra te dizer 💌</h1>
+    <p class="subtitle">Clica no envelope, é sobre você, Ana Lu ouu mohmohzinho. 🩺💙</p>
+    <p class="hint">
+      <span>⬇️</span> Clica aqui embaixo, eu juro que é coisa boa.
+    </p>
+
+    <div class="envelope-area">
+      <div id="envelope" class="envelope">
+        <div class="envelope-label">PARABÉNS POR PASSAR EM ENFERMAGEM</div>
+        <div class="envelope-title">
+          Para: <strong>Mohmohzinho</strong>
+          <span class="envelope-emoji">💙🩺</span>
+        </div>
+      </div>
+    </div>
+    <p class="click-tip">
+      (Se não abrir de primeira, ME LIGUE. Aliás, a qualquer momento se quiser pode ser até hoje e agora,
+      quero ouvir sua voz novamente 😉)
+    </p>
+
+    <div id="card" class="card">
+      <div class="card-tag">HEHEHE</div>
+      <div class="card-title">Parabéns por passar em Enfermagem, Ana Lu 💙</div>
+
+      <div class="card-content">
+        <!-- FOTO DELA AQUI -->
+        <div class="photo-wrapper">
+          <img src="ana-lu-foto.jpg" alt="Ana Lu enfermeira" />
+        </div>
+
+        <p>
+          Essa é a carta oficial do fã nº 1 da
+          <span class="card-strong">futura enfermeira mais incrível desse mundo</span>.
+        </p>
+
+        <p style="margin-top: 8px;">
+          Parabéns <span class="card-strong">mohmoh</span> por passar
+          <span class="card-strong"> em Enfermagem</span>,
+          meu peito enche de orgulho por você. Eu sempre soube que você tinha
+          esse jeito de cuidar, de se preocupar e de querer ver todo mundo bem.
+        </p>
+
+        <p style="margin-top: 8px;">
+          Queria te contar o quanto você é especial pra mim e pra todos à nossa volta.
+        </p>
+
+        <p style="margin-top: 8px;">
+          Vai ter prova difícil, estágio cansativo, plantão longo e madrugadas pesadas.
+          Mas em todas eu queria estar por perto: pra te apoiar, te ouvir, te lembrar de
+          respirar fundo e, principalmente, te encher o saco e te estressar :) e te lembrar de uma coisa:
+        </p>
+
+        <p style="margin-top: 8px;">
+          <span class="card-strong">Você é incrível. Te amu. Eu tenho muito orgulho de você.</span>
+        </p>
+
+        <p style="margin-top: 10px;">
+          Parabéns, mohmoh. Te desejo tudo de melhor e espero que tudo dê certo.
+          Futura enfermeira favorita. 💙🩺 (me assustei, pensei que ia fazer psicologia, mas enfim…)
+          Se ainda tiver lendo isso, me desculpa pelo "parabéns" seco.
+          Pensei muito em te falar muita coisa, mas na minha cabeça você me odeia ou sei lá,
+          ou é meu dom escolher as piores escolhas hehe. Te amo &lt;3
+        </p>
+      </div>
+    </div>
+
+    <!-- VÍDEO DA MENSAGEM -->
+    <div id="videoWrapper" class="video-wrapper">
+      <video id="videoMensagem" playsinline controls>
+        <source src="ana-lu-video.mp4" type="video/mp4" />
+        Seu navegador não suporta vídeo.
+      </video>
+    </div>
+
+    <!-- ÁUDIO DA MENSAGEM (opcional) -->
+    <audio id="audioMensagem">
+      <source src="ana-lu-audio.mp3" type="audio/mpeg" />
+      Seu navegador não suporta áudio.
+    </audio>
+
+    <p class="footer-note">
+      Se a carta não apareceu, recarrega a página e tenta de novo.
+      <span>Funciona melhor no celular na vertical.</span>
+    </p>
+    <p class="small">P.S.: um dia ainda vou dizer “tá vendo essa enfermeira linda aí? É a Ana Lu”.</p>
+  </div>
+
+  <script>
+    const envelope = document.getElementById("envelope");
+    const card = document.getElementById("card");
+    const audio = document.getElementById("audioMensagem");
+    const videoWrapper = document.getElementById("videoWrapper");
+    const video = document.getElementById("videoMensagem");
+
+    envelope.addEventListener("click", () => {
+      card.classList.add("open");
+
+      // mostrar o vídeo
+      videoWrapper.classList.add("show");
+
+      // começar o vídeo do início
+      if (video) {
+        video.currentTime = 0;
+        video.play().catch(() => {
+          // alguns navegadores bloqueiam autoplay
+        });
+      }
+
+      // tocar o áudio junto (se não quiser, pode apagar esse bloco)
+      if (audio) {
+        audio.currentTime = 0;
+        audio.play().catch(() => {});
+      }
+    });
+  </script>
+</body>
+</html>
